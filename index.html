@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Introduction to Web Technologies — Course Page</title>
+    <meta name="description"
+        content="A simple Course Information Page built with HTML5 semantic elements and CSS for styling." />
+    <style>
+        /* Minimal styling so page looks pleasant without external CSS */
+        :root {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            line-height: 1.5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            background: #f9fafb;
+        }
+
+        header,
+        main,
+        footer,
+        nav,
+        article,
+        aside {
+            display: block;
+            padding: 1rem;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0ea5a4, #06b6d4);
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: .5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: .25rem .5rem;
+            background: rgba(255, 255, 255, .12);
+            border-radius: 6px;
+        }
+
+        main {
+            background: white;
+            margin-top: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(10, 10, 10, .06);
+        }
+
+        .gallery {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: calc(33% - .5rem);
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        ul.course-list {
+            padding-left: 1.2rem;
+        }
+
+        footer {
+            font-size: .9rem;
+            color: #333;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        @media (max-width:700px) {
+            .gallery img {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page header with the main H1 -->
+    <header class="container" role="banner">
+        <h1>Introduction to Web Technologies</h1>
+        <p>Course overview, schedule, and resources for the Web Technologies module.</p>
+
+        <!-- Simple navigation (semantic nav) -->
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area (semantic main) -->
+    <main id="overview" class="container" role="main">
+        <!-- Article: course description -->
+        <article>
+            <h2>Course Description</h2>
+            <p>This course covers HTML5, CSS3, web servers, RESTful web services and client-side scripting with
+                JavaScript. It emphasizes practical exercises and validated, accessible markup.</p>
+
+            <!-- List with at least three items -->
+            <h3>What you will learn</h3>
+            <ul class="course-list">
+                <li>HTML5 semantic structure and accessibility basics</li>
+                <li>Styling with CSS3 and responsive design</li>
+                <li>Introduction to REST APIs and JSON</li>
+                <li>Basic server configuration and deployment</li>
+            </ul>
+        </article>
+
+        <!-- Aside: short schedule (semantic aside) -->
+        <aside id="schedule" aria-labelledby="schedule-heading">
+            <h3 id="schedule-heading">Class Schedule</h3>
+            <p>Classes: Tuesdays & Thursdays — 10:00 AM to 11:30 AM</p>
+            <p>Location: Lab 4 / Online</p>
+        </aside>
+
+        <!-- Resource section with images and an external link -->
+        <section id="resources" aria-labelledby="resources-heading">
+            <h2 id="resources-heading">Resources & Images</h2>
+            <p>Below are sample images used for in-class exercises and an external link for deeper reading.</p>
+
+            <!-- Image gallery: includes at least 3 images -->
+            <div class="gallery" aria-hidden="false">
+                <!-- Images use public placeholder services for this demo -->
+                <img src="https://picsum.photos/id/1015/600/400" alt="Sample: modern web layout" />
+                <img src="https://picsum.photos/id/1025/600/400" alt="Sample: code on screen" />
+                <img src="https://picsum.photos/id/1035/600/400" alt="Sample: team working together" />
+            </div>
+
+            <p>Recommended reading: <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank"
+                    rel="noopener noreferrer">MDN Web Docs — Learn Web Development</a></p>
+        </section>
+    </main>
+
+    <!-- Footer (semantic footer) -->
+    <footer class="container" role="contentinfo">
+        <p>&copy; <span id="year"></span> Dept. of Computer Science — Course page example. Built with semantic HTML5.
+        </p>
+        <script>
+            // Small script to set the current year (keeps the HTML static but current)
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>
