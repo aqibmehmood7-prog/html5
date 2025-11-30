@@ -1,0 +1,47 @@
+/* style.css — common stylesheet for all pages */
+
+/* 1. body: font family & font size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* 2. header: background color */
+header {
+  background-color: #336699;
+}
+
+/* 3. nav: background color */
+nav {
+  background-color: #224477;
+}
+
+/* 4. main: background color & font size */
+main {
+  background-color: #f2f2f2;
+  font-size: 14px;
+}
+
+/* 5. footer: background color */
+footer {
+  background-color: #333333;
+  color: white; /* optional: make footer text readable */
+}
+
+/* 6. li: display and width */
+li {
+  display: inline-block;
+  width: 150px;
+}
+
+/* 7. h1: text alignment, font family, color */
+h1 {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #003366;
+}
+
+/* 8. p: line-height */
+p {
+  line-height: 1.6;
+}
